@@ -1,0 +1,11 @@
+sh post_install.sh
+sqlplus
+user: sys as sysdba
+pass: oracle
+alter session set "_ORACLE_SCRIPT"=true;
+create user TEST identified by 1234;
+grant dba to TEST;
+GRANT execute ON DBMS_LOCK TO TEST;
+exit;
+sqlplus '/ as sysdba'
+CONNECT TEST;
