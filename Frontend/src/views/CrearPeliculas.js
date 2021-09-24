@@ -43,13 +43,6 @@ export default function CrearPeliculas() {
       .then((res) => res)
       .then(async function (response) {
         if (response.status == 200) {
-          let respuesta = await response.json();
-          let val = respuesta.data;
-
-          console.log(val);
-
-          localStorage.setItem("current", JSON.stringify(val));
-
           toastr.options = {
             positionClass: "toast-top-full-width",
             hideDuration: 300,
